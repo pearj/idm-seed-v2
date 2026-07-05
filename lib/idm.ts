@@ -1,5 +1,5 @@
 // Generated file
-import { idmObject, ReferenceType } from "@agiledigital/idm-ts-types/lib/idm-ts";
+import { idmObject, ReferenceType } from "@pearj/am-idm-ts-types/lib/idm-ts";
 
 /**
  * SubTypeTest Managed Object Default fields
@@ -89,7 +89,7 @@ export type ManagedAssignmentNonDefaults = {
   /**
    * Managed Roles
    */
-  roles?: ReferenceType<ManagedRole>[];
+  roles?: ReferenceType<ManagedRole, ManagedRoleDefaults>[];
 };
 
 /**
@@ -213,17 +213,17 @@ export type ManagedRoleNonDefaults = {
   /**
    * Role Members
    */
-  members?: ReferenceType<ManagedUser>[];
+  members?: ReferenceType<ManagedUser, ManagedUserDefaults>[];
 
   /**
    * Authorization Role Members
    */
-  authzMembers?: ReferenceType<ManagedUser>[];
+  authzMembers?: ReferenceType<ManagedUser, ManagedUserDefaults>[];
 
   /**
    * Managed Assignments
    */
-  assignments?: ReferenceType<ManagedAssignment>[];
+  assignments?: ReferenceType<ManagedAssignment, ManagedAssignmentDefaults>[];
 };
 
 /**
@@ -372,12 +372,12 @@ export type ManagedUserNonDefaults = {
   /**
    * Provisioning Roles
    */
-  roles?: ReferenceType<ManagedRole>[];
+  roles?: ReferenceType<ManagedRole, ManagedRoleDefaults>[];
 
   /**
    * Manager
    */
-  manager?: ReferenceType<ManagedUser>;
+  manager?: ReferenceType<ManagedUser, ManagedUserDefaults>;
 
   /**
    * Authorization Roles
@@ -387,7 +387,7 @@ export type ManagedUserNonDefaults = {
   /**
    * Direct Reports
    */
-  reports?: ReferenceType<ManagedUser>[];
+  reports?: ReferenceType<ManagedUser, ManagedUserDefaults>[];
 
   /**
    * Consented Mappings

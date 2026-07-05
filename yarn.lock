@@ -5,20 +5,6 @@ __metadata:
   version: 10
   cacheKey: 10c0
 
-"@agiledigital/idm-ts-types@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "@agiledigital/idm-ts-types@npm:1.1.2"
-  dependencies:
-    camelcase: "npm:^5.3.1"
-    config: "npm:^3.2.2"
-    lodash: "npm:^4.17.21"
-    nunjucks: "npm:^3.2.2"
-  bin:
-    gen-idm-ts-types: bin/gen-idm-ts-types.js
-  checksum: 10c0/b48143f00af4ba08455bb390631a10a71c6b2a09318f1aa06291303e0f7ea3f8f6672f3a14cc1f6a422d4f0cfc57cc4f2c3679f61cbe30fb406f90913c178b79
-  languageName: node
-  linkType: hard
-
 "@babel/cli@npm:^8.0.1":
   version: 8.0.1
   resolution: "@babel/cli@npm:8.0.1"
@@ -2059,6 +2045,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@pearj/am-idm-ts-types@portal:/home/joel/dev/idm-ts-types::locator=idm-seed-v2%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@pearj/am-idm-ts-types@portal:/home/joel/dev/idm-ts-types::locator=idm-seed-v2%40workspace%3A."
+  dependencies:
+    camelcase: "npm:^5.3.0"
+    config: "npm:^4.4.2"
+    lodash: "npm:^4.18.1"
+    nunjucks: "npm:^3.2.4"
+  bin:
+    gen-idm-ts-types: bin/gen-idm-ts-types.js
+  languageName: node
+  linkType: soft
+
 "@pkgjs/parseargs@npm:^0.11.0":
   version: 0.11.0
   resolution: "@pkgjs/parseargs@npm:0.11.0"
@@ -3288,7 +3287,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"camelcase@npm:^5.3.1":
+"camelcase@npm:^5.3.0, camelcase@npm:^5.3.1":
   version: 5.3.1
   resolution: "camelcase@npm:5.3.1"
   checksum: 10c0/92ff9b443bfe8abb15f2b1513ca182d16126359ad4f955ebc83dc4ddcc4ef3fdd2c078bc223f2673dc223488e75c99b16cc4d056624374b799e6a1555cf61b23
@@ -3453,21 +3452,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"config@npm:^3.2.2":
-  version: 3.3.12
-  resolution: "config@npm:3.3.12"
+"config@npm:^4.4.2":
+  version: 4.4.2
+  resolution: "config@npm:4.4.2"
   dependencies:
     json5: "npm:^2.2.3"
-  checksum: 10c0/496b3ef740754527cbc59d11df234f5be5b5f44511d14ca7fa6117fda0959ccd4cc6d8da2d94cb0dfcdf77d9d7aaaa34558d6dcce0a7860a3a8cf8a54c77b237
-  languageName: node
-  linkType: hard
-
-"config@npm:^4.4.1":
-  version: 4.4.1
-  resolution: "config@npm:4.4.1"
-  dependencies:
-    json5: "npm:^2.2.3"
-  checksum: 10c0/f92c7b61d2456f933a53da1fea06abe116584df99dd1254a93e7b10c9487ddf17a1f865bd7ab8e4cf0cca23777dd89b6b1ba81e1c71e06111d36fbb00b49c28f
+  checksum: 10c0/2ef94db31c8f573d2beefa6682ec16f142f9f56710c43e4fc8a8d5bb48cc056b1f8174ae8fa4554af23c041e366dc8c940e7e6d9664904c6ef0ed2e60fe51216
   languageName: node
   linkType: hard
 
@@ -4209,7 +4199,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "idm-seed-v2@workspace:."
   dependencies:
-    "@agiledigital/idm-ts-types": "npm:^1.1.2"
     "@babel/cli": "npm:^8.0.1"
     "@babel/core": "npm:^8.0.1"
     "@babel/plugin-transform-class-properties": "npm:^8.0.1"
@@ -4217,8 +4206,9 @@ __metadata:
     "@babel/preset-env": "npm:^8.0.2"
     "@babel/preset-typescript": "npm:^8.0.1"
     "@eslint/js": "npm:^10.0.1"
+    "@pearj/am-idm-ts-types": "npm:^1.1.2"
     "@types/node": "npm:^26.0.0"
-    config: "npm:^4.4.1"
+    config: "npm:^4.4.2"
     eslint: "npm:^10.5.0"
     eslint-config-prettier: "npm:^10.1.8"
     eslint-plugin-prettier: "npm:^5.5.6"
@@ -5071,7 +5061,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.21":
+"lodash@npm:^4.18.1":
   version: 4.18.1
   resolution: "lodash@npm:4.18.1"
   checksum: 10c0/757228fc68805c59789e82185135cf85f05d0b2d3d54631d680ca79ec21944ec8314d4533639a14b8bcfbd97a517e78960933041a5af17ecb693ec6eecb99a27
@@ -5288,7 +5278,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nunjucks@npm:^3.2.2":
+"nunjucks@npm:^3.2.4":
   version: 3.2.4
   resolution: "nunjucks@npm:3.2.4"
   dependencies:

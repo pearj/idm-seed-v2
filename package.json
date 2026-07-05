@@ -2,7 +2,6 @@
   "name": "idm-seed-v2",
   "packageManager": "yarn@4.17.0",
   "devDependencies": {
-    "@agiledigital/idm-ts-types": "^1.1.2",
     "@babel/cli": "^8.0.1",
     "@babel/core": "^8.0.1",
     "@babel/plugin-transform-class-properties": "^8.0.1",
@@ -10,8 +9,9 @@
     "@babel/preset-env": "^8.0.2",
     "@babel/preset-typescript": "^8.0.1",
     "@eslint/js": "^10.0.1",
+    "@pearj/am-idm-ts-types": "^1.1.2",
     "@types/node": "^26.0.0",
-    "config": "^4.4.1",
+    "config": "^4.4.2",
     "eslint": "^10.5.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.6",
@@ -28,7 +28,11 @@
     "webpack-cli": "^7.0.3"
   },
   "scripts": {
-    "build:webpack": "webpack",
+    "gen-idm-ts-types": "gen-idm-ts-types",
+    "build:webpack": "gen-idm-ts-types && webpack",
     "watch:webpack": "webpack -w"
+  },
+  "resolutions": {
+    "@pearj/am-idm-ts-types": "portal:/home/joel/dev/idm-ts-types"
   }
 }

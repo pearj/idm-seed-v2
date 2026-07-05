@@ -1,4 +1,4 @@
-import { allOf, equals, not, presence } from "@agiledigital/idm-ts-types/lib/query-filter";
+import { allOf, equals, not, presence } from "@pearj/am-idm-ts-types/lib/query-filter";
 import { idm, ManagedUser, SystemUsersWithManagersAccount } from "lib/idm";
 import { getLogger } from "./common";
 
@@ -106,7 +106,7 @@ export const linkManager = (source: SystemUsersWithManagersAccount, target: Mana
 export function findUserByUserName(userName: string): ManagedUser;
 export function findUserByUserName(userName: string, returnUndefined: boolean): ManagedUser | undefined;
 export function findUserByUserName(userName: string, returnUndefined = false): ManagedUser | undefined {
-  const userRes = idm.managed.user.query({ filter: equals("userName", userName) }, { unCheckedFields: ["*", "*_ref"] });
+  const userRes = idm.managed.user.query({ filter: equals("userName", userName) }, { fields: ["*", "*_ref"] });
   const user = userRes.result?.[0];
   if (!user && !returnUndefined) {
     throw new Error(`Couldn't find user [${userName}]`);
@@ -175,7 +175,7 @@ function handlePasswordChange(object: ManagedUser, context?: RequestContext): vo
  * @param object The Managed User that is being changed
  * @param context The context which contains which user
  */
-export function managedUserOnChange(object: ManagedUser, context: any, oldObject?: ManagedUser): void {
+export function managedUserOnChange(object: ManagedUser, context: any, _oldObject?: ManagedUser): void {
   if (object.password) {
     handlePasswordChange(object, context);
   }

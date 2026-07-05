@@ -48,6 +48,7 @@ const config: webpack.Configuration = {
     ],
   },
   resolve: {
+    symlinks: false,
     extensions: [".ts", ".js", ".json"],
     alias: {
       lib: path.resolve(__dirname, "./lib/"),

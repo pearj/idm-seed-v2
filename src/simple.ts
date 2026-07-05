@@ -1,4 +1,6 @@
-import { idm } from "lib/idm";
+import { idmObject } from "@pearj/am-idm-ts-types/lib/idm-ts";
+import { equals } from "@pearj/am-idm-ts-types/lib/query-filter";
+import { idm, ManagedPendingRelationships, ManagedPendingRelationshipsDefaults, ManagedSubTypeTest, ManagedSubTypeTestDefaults } from "lib/idm";
 import _ from "lib/lodash";
 
 export const findOrCreateUserRelationship = (userName: string) => {
@@ -14,6 +16,14 @@ export const sonartsFailure = () => {
   while ((curTest = test.pop())) {
     logger.info(`Current Test Value ${curTest}`);
   }
+
+  const test2 = idmObject<ManagedSubTypeTest, ManagedSubTypeTestDefaults>("managed/SubTypeTest");
+  test2.query({ filter: equals("firstType", "sd") });
+
+  const test3 = idmObject<ManagedPendingRelationships, ManagedPendingRelationshipsDefaults>("managed/pendingRelationships");
+  test3.query({ filter: equals("actionTime", "bob") });
+
+  idm.managed.pendingRelationships.query({ filter: equals("sourceQueryFilter", "bob") });
 };
 
 /**

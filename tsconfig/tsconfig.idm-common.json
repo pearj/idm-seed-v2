@@ -1,12 +1,12 @@
 {
-  "extends": "../../../tsconfig.json",
+  "extends": "./tsconfig-base.json",
   "compilerOptions": {
+    "rootDir": "../",
     "types": [
       "@pearj/am-idm-ts-types/common",
       "@pearj/am-idm-ts-types/idm/common",
-      "@pearj/am-idm-ts-types/idm/endpoint",
       "jest"
     ]
   },
-  "include": ["./**/*"]
+  "include": ["../src/idm/common/**/*", "../lib/**/*"]
 }

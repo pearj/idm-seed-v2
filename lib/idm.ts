@@ -26,7 +26,8 @@ export type ManagedSubTypeTestNonDefaults = {};
 /**
  * SubTypeTest Managed Object
  */
-export type ManagedSubTypeTest = ManagedSubTypeTestDefaults & ManagedSubTypeTestNonDefaults;
+export type ManagedSubTypeTest = ManagedSubTypeTestDefaults &
+  ManagedSubTypeTestNonDefaults;
 
 /**
  * assignment Managed Object Default fields
@@ -38,42 +39,42 @@ export type ManagedAssignmentDefaults = {
   _tag?: "managed/assignment";
 
   /**
-   * Name
+   * Name  
    *
    * The assignment ID
    */
   _id?: string;
 
   /**
-   * Name
+   * Name  
    *
    * The assignment name, used for display purposes.
    */
   name: string;
 
   /**
-   * Description
+   * Description  
    *
    * The assignment description, used for display purposes.
    */
   description: string;
 
   /**
-   * Mapping
+   * Mapping  
    *
    * The name of the mapping this assignment applies to
    */
   mapping: string;
 
   /**
-   * Assignment Attributes
+   * Assignment Attributes  
    *
    * The attributes operated on by this assignment.
    */
   attributes?: SubManagedAssignmentAttributes[];
 
   /**
-   * Link Qualifiers
+   * Link Qualifiers  
    *
    * Conditional link qualifiers to restrict this assignment to.
    */
@@ -95,7 +96,8 @@ export type ManagedAssignmentNonDefaults = {
 /**
  * assignment Managed Object
  */
-export type ManagedAssignment = ManagedAssignmentDefaults & ManagedAssignmentNonDefaults;
+export type ManagedAssignment = ManagedAssignmentDefaults &
+  ManagedAssignmentNonDefaults;
 
 /**
  * pendingRelationships Managed Object Default fields
@@ -157,7 +159,8 @@ export type ManagedPendingRelationshipsNonDefaults = {};
 /**
  * pendingRelationships Managed Object
  */
-export type ManagedPendingRelationships = ManagedPendingRelationshipsDefaults & ManagedPendingRelationshipsNonDefaults;
+export type ManagedPendingRelationships = ManagedPendingRelationshipsDefaults &
+  ManagedPendingRelationshipsNonDefaults;
 
 /**
  * role Managed Object Default fields
@@ -169,35 +172,35 @@ export type ManagedRoleDefaults = {
   _tag?: "managed/role";
 
   /**
-   * Name
+   * Name  
    *
    * Role ID
    */
   _id?: string;
 
   /**
-   * Name
+   * Name  
    *
    * The role name, used for display purposes.
    */
   name: string;
 
   /**
-   * Description
+   * Description  
    *
    * The role description, used for display purposes.
    */
   description?: string;
 
   /**
-   * Condition
+   * Condition  
    *
    * A conditional filter for this role
    */
   condition?: string;
 
   /**
-   * Temporal Constraints
+   * Temporal Constraints  
    *
    * An array of temporal constraints for a role
    */
@@ -356,7 +359,7 @@ export type ManagedUserDefaults = {
   preferences?: SubManagedUserPreferences;
 
   /**
-   * Safe To Sync
+   * Safe To Sync  
    *
    * This flag is used to determine when all the dependencies of this user have been linked and are safe to sync to a downstream system
    */
@@ -664,16 +667,28 @@ export type SystemUsersWithManagersAccount = {
 export const idm = {
   ...openidm,
   managed: {
-    SubTypeTest: idmObject<ManagedSubTypeTest, ManagedSubTypeTestDefaults>("managed/SubTypeTest"),
-    assignment: idmObject<ManagedAssignment, ManagedAssignmentDefaults>("managed/assignment"),
-    pendingRelationships: idmObject<ManagedPendingRelationships, ManagedPendingRelationshipsDefaults>("managed/pendingRelationships"),
+    SubTypeTest: idmObject<ManagedSubTypeTest, ManagedSubTypeTestDefaults>(
+      "managed/SubTypeTest",
+    ),
+    assignment: idmObject<ManagedAssignment, ManagedAssignmentDefaults>(
+      "managed/assignment",
+    ),
+    pendingRelationships: idmObject<
+      ManagedPendingRelationships,
+      ManagedPendingRelationshipsDefaults
+    >("managed/pendingRelationships"),
     role: idmObject<ManagedRole, ManagedRoleDefaults>("managed/role"),
     user: idmObject<ManagedUser, ManagedUserDefaults>("managed/user"),
   },
   system: {
-    scimAccount: idmObject<SystemScimAccount, SystemScimAccount>("system/scim/account"),
+    scimAccount: idmObject<SystemScimAccount, SystemScimAccount>(
+      "system/scim/account",
+    ),
     scimGroup: idmObject<SystemScimGroup, SystemScimGroup>("system/scim/group"),
-    usersWithManagersAccount: idmObject<SystemUsersWithManagersAccount, SystemUsersWithManagersAccount>("system/UsersWithManagers/__ACCOUNT__"),
+    usersWithManagersAccount: idmObject<
+      SystemUsersWithManagersAccount,
+      SystemUsersWithManagersAccount
+    >("system/UsersWithManagers/__ACCOUNT__"),
   },
 };
 

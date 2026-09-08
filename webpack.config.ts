@@ -12,9 +12,9 @@ const outputDir = webpackConfig.outputDir;
 
 const config: webpack.Configuration = {
   mode: "production",
-  entry: globSync("./src/*.ts").reduce((acc, file) => {
-    const baseName = path.basename(file, ".ts");
-    return { ...acc, [baseName]: path.resolve(__dirname, file) };
+  entry: globSync("./src/**/*.ts", { ignore: ["**/*.d.ts"] }).reduce((acc, file) => {
+    const rel = path.relative("./src", file).replace(/\.ts$/, "");
+    return { ...acc, [rel]: path.resolve(__dirname, file) };
   }, {}),
   target: "node",
   output: {
@@ -36,11 +36,12 @@ const config: webpack.Configuration = {
         use: {
           loader: "ts-loader",
           options: {
+            configFile: path.resolve(__dirname, "tsconfig.json"),
             allowTsInNodeModules: true,
             transpileOnly: true,
             compilerOptions: {
               ignoreDeprecations: "6.0",
-              rootDir: "./",
+              rootDir: path.resolve(__dirname, "./"),
             },
           },
         },

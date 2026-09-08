@@ -1,0 +1,11 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "types": [
+      "@pearj/am-idm-ts-types/common",
+      "@pearj/am-idm-ts-types/am/common",
+      "jest"
+    ]
+  },
+  "include": ["./**/*"]
+}

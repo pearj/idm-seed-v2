@@ -18,6 +18,7 @@ export const sonartsFailure = () => {
   }
 
   const test2 = idmObject<ManagedSubTypeTest, ManagedSubTypeTestDefaults>("managed/SubTypeTest");
+  // @ts-expect-error - firstType is SubManagedSubTypeTestFirstType[], cannot compare directly with string
   test2.query({ filter: equals("firstType", "sd") });
 
   const test3 = idmObject<ManagedPendingRelationships, ManagedPendingRelationshipsDefaults>("managed/pendingRelationships");
